@@ -28,7 +28,11 @@ const defaultitem3 = new Item({ name: "<-- Hit this to delete an item" });
 const defaultitem = [defaultitem1, defaultitem2, defaultitem3];
 
 // port
-const PORT = 3000;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
 let first = true;
 
 // General List get request
@@ -77,4 +81,4 @@ app.post("/delete", function (req, res) {
 });
 
 // listening on port
-app.listen(PORT, () => console.log("Server Started on Port " + PORT));
+app.listen(port, () => console.log("Server Started on Port " + PORT));
