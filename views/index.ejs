@@ -1,0 +1,28 @@
+<%- include('header'); %>
+<div class="box" id="heading">
+  <h1><%= listType %></h1>
+</div>
+<div class="box">
+  <% for(var i=0;i<items.length;i++){ %>
+  <form action="/delete" method="POST">
+    <div class="item">
+      <input type="checkbox" onChange="this.form.submit()" name="name" value='<%= items[i]._id %>'>
+      <p> <%= items[i].name %></p>
+    </div>
+    <input type="hidden" name="listType" value="<%= listType %>">
+  </form>
+  <% } %>
+  <form action="/" method="POST" class="item">
+    <input type="text" name="item" placeholder="New Item" autocomplete="off">
+    <button type="submit" id="submit" name="button" value="<%= listType %>">+</button>
+  </form>
+  <div class="item">
+    <% if(listType === "Work List"){ %>
+    <a href="/">Go to General List</a>
+    <% } else { %>
+    <a href="/work">Go to Work List</a>
+    <% } %>
+  </div>
+
+</div>
+<%- include('footer'); %>
