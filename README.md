@@ -13,4 +13,4 @@
 * Frontend : HTML, CSS, Bootstrap
 * Backend : Node.js, Express, EJS, MongoDB Atlas
 
-[Visit Project Here](https://nameless-springs-38027.herokuapp.com/)
+<a href="https://nameless-springs-38027.herokuapp.com/" target="_blank">Visit Project Here
